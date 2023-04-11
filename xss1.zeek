@@ -18,7 +18,7 @@ event zeek_init()
 
 event http_request(c: connection, method: string, original_URI: string, unescaped_URI: string, version: string)
     {
-    local res  = match_pattern(original_URI, /ads/);
+    local res  = match_pattern(original_URI, /script/);
     if (res$matched){
      Log::write( XSS::LOG, [$sourceIP=c$id$orig_h,
                                   $affected_url=original_URI]);

@@ -23,5 +23,4 @@ event http_request(c: connection, method: string, original_URI: string, unescape
      Log::write( XSS::LOG, [$sourceIP=c$id$orig_h,
                                   $affected_url=original_URI]);
                                   }
-    #print original_URI;
     }
